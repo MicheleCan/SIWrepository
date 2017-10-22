@@ -13,7 +13,9 @@ public class Gruppo {
 	}
 	
 	public Gruppo(String nome){
+		this();
 		this.nome=nome;
+		
 	}
 
 	public Long getId() {
