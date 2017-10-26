@@ -2,6 +2,9 @@ package persistence;
 
 
 
+import persistence.dao.CorsoDao;
+import persistence.dao.CorsoDiLaureaDao;
+import persistence.dao.DipartimentoDao;
 import persistence.dao.GruppoDao;
 import persistence.dao.IndirizzoDao;
 import persistence.dao.StudenteDao;
@@ -44,7 +47,21 @@ class PostgresDAOFactory extends DAOFactory {
 	public IndirizzoDao getIndirizzoDAO() {
 		return new IndirizzoDaoJDBC(dataSource);
 	}
+
+	@Override
+	public DipartimentoDao getDipartimentoDAO() {
+		return new DipartimentoDaoJDBC(dataSource);
+	}
+
+	@Override
+	public CorsoDao getCorsoDAO() {
+		return new CorsoDaoJDBC(dataSource);
+	}
 	
+	@Override
+	public CorsoDiLaureaDao getCorsoDiLaureaDAO() {
+		return new CorsoDiLaureaDaoJDBC(dataSource);
+	}
 	
 	@Override
 	public UtilDao getUtilDAO(){
